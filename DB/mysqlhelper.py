@@ -1,5 +1,6 @@
 #使用pymysql包
 import pymysql
+from django.conf import settings
 
 host = ''
 port = 3306

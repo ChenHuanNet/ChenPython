@@ -124,11 +124,11 @@ STATIC_URL = '/static/'
 
 # 自定义节点 节点名称必须大写
 APPSETTING = {
-    'mysql': [{
-        'host': 'host',
+    'mysql': {
+        'host': '47.107.235.157',
         'port': 3306,
         'user': 'root',
         'password': 'root',
-        'dbname': 'test'
-    }]
+        'dbname': 'db_shares_test'
+    }
 }

@@ -37,3 +37,8 @@ def index(request):
     rows = DB.mysqlhelper.ExecuteSql(sql, [nickname])
     context['rows'] = rows
     return render(request, "homepage/index.html", context)
+
+
+def formpage(request):
+    context={}
+    return render(request,"homepage/formpage.html",context);

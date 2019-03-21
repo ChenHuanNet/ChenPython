@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django import urls
 from controllers import homepage
+from apicontrollers import  test
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('homepage/index/',homepage.index)
+    path('homepage/index/',homepage.index),
+    path('homepage/formpage/',homepage.formpage),
+    #api路由配置
+    path('api/test/submitform/', test.submitform),
+    path('api/test/submitGetList/', test.submitGetList),
 ]

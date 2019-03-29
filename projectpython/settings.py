@@ -24,8 +24,6 @@ SECRET_KEY = '&-js1!e-42)zd57gr5872t(dw^hca-atth%%a!o+f578zg*sn@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -158,13 +156,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS=(BASE_DIR,'static')
+
 # 自定义节点 节点名称必须大写
 APPSETTING = {
     'mysql': {
-        'host': '47.107.235.157',
+        'host': '47.106.75.178',
         'port': 3306,
         'user': 'root',
-        'password': 'root',
-        'dbname': 'db_shares_test'
+        'password': 'rzwl@2019',
+        'dbname': 'mytest'
     }
 }

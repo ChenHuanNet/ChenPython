@@ -17,6 +17,8 @@ def index(request):
     # 操作mysql数据库
     sql = (" select * from ord_user_list where Id=%s " % id)
     user = DB.mysqlhelper.GetDict(sql)
+
+
     if user is None:
         user = '空'  # python是一种弱类型语言 变量类型可以随便替换的 跟JS一样
     user2 = DB.mysqlhelper.Get(sql)

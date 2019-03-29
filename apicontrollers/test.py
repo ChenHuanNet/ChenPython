@@ -1,6 +1,6 @@
 import Models.MyResult
 from django.http import JsonResponse
-
+import DB.mysqlhelper
 
 def submitform(request):
     # f = Models.MyResult.ApiResult()
@@ -39,12 +39,17 @@ def submitGetList(request):
         myresult['message'] = '请使用GET请求'
         return JsonResponse(myresult, json_dumps_params={'ensure_ascii': False})
 
+    # 操作mysql数据库
+    id = request.GET['id']
+    sql = (" select * from ord_user_list where Id=%s " % id)
+    user = DB.mysqlhelper.GetDict(sql)
+
     realname = 123
     birthday = 456
     myresult = {}
     myresult['code'] = 0
     myresult['message'] = '提交成功'
-    myresult['data'] = [{"realname": realname, "birthday": birthday}]
-
+    myresult['data2'] = [{"realname": realname, "birthday": birthday}]
+    myresult['data'] = user
     # JsonResponse  默认仅支持Dict 参数输出
     return JsonResponse(myresult, json_dumps_params={'ensure_ascii': False})
